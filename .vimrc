@@ -242,10 +242,12 @@ set expandtab
 set tabstop=2
 
 
-" Put the vim backfiles into the ~/tmp/ directory
-" This puts the backup files out of sight (and out of your way), but doesn't turn them off entirely.
-set backupdir-=.
-set backupdir^=~/tmp
+" Remove swap,backup and undo files from working diretory
+" This puts those files out of sight (and out of your way), but doesn't turn them off entirely.
+" https://medium.com/@Aenon/vim-swap-backup-undo-git-2bf353caa02f 
+set backupdir=.backup/,~/.backup/,~/vimtmp//
+set directory=.swp/,~/.swp/,~/vimtmp//
+set undodir=.undo/,~/.undo/,~/vimtmp//
 
 " Disable vim markdown auto-folding
 let g:vim_markdown_folding_disabled = 1
