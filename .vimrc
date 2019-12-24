@@ -19,7 +19,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
-Plugin 'tpope/vim-surroundp'
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 
 " <============================================>
