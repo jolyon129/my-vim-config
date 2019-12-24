@@ -1,14 +1,44 @@
+" --------------Vundle Starts-------------------------
 
-" An example for a vimrc file.
+set nocompatible              " be iMproved, required
+filetype off                  " required <<========== We can turn it on later
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" <============================================>
+" Specify plugins you want to install here.
+
+" Install plasticboy/vim-markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+Plugin 'tpope/vim-surroundp'
+Plugin 'tpope/vim-commentary'
+
+" <============================================>
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
 "
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2019 Jan 26
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
+" see :h vundle for more details or wiki for FAQ
+"----------------Vundle ends here  ---------------------------
+
+"-- ----- auto generate by Vim 8.0 ---------------------
 
 " When started as "evim", evim.vim will already have done these settings, bail
 " out.
@@ -50,3 +80,30 @@ augroup END
 if has('syntax') && has('eval')
   packadd! matchit
 endif
+
+
+" -------------------My own configuration starts here--------------
+
+" Double ESC to clear previous searching highlight
+nnoremap <silent> <Esc><Esc> :noh<CR> :call clearmatches()<CR>
+
+" Change the search highlighting background color
+set hlsearch
+hi Search ctermbg=Red
+
+
+" when indenting with >, use 2 spaces width 
+set shiftwidth=2
+" On pressing tab, using spaces instead
+set expandtab
+" set the number of spaces a tab counts for 
+set tabstop=2
+
+
+" Put the vim backfiles into the ~/tmp/ directory
+" This puts the backup files out of sight (and out of your way), but doesn't turn them off entirely.
+set backupdir-=.
+set backupdir^=~/tmp
+
+" Disable vim markdown auto-folding
+let g:vim_markdown_folding_disabled = 1
