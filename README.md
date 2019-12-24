@@ -15,7 +15,7 @@ BTW, I also put my `.tmux.conf` file here.
 
 I'm using vundle(kind of obviously).
 
-The vim backup is turned on and all of those `.*~` files are sroted in `~/tmp/`.
+The vim backup is turned on and all of those `.*~` files are sroted in `~/vimtmp/`.
 
 The plugin I'm using:
 * surround
